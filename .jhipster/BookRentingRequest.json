@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220510131855",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "book_renting_request",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "RentingStatus",
+      "fieldValues": "OPEN,CANCELLED,RENTED,DECLINED"
+    },
+    {
+      "fieldName": "rentedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "rentedUntil",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BookRentingRequest",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "book",
+      "otherEntityRelationshipName": "bookRentingRequest",
+      "relationshipName": "book",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20220510131854",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "book",
+  "fields": [
+    {
+      "fieldName": "author",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "releaseDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "BookStatus",
+      "fieldValues": "AVAILABLE,BOOKED,RENTED"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "Category",
+      "fieldValues": "CHILDREN,DRAMA,THRILLER"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "Language",
+      "fieldValues": "ESTONIAN,ENGLISH,FINNISH"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Book",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "bookRentingRequest",
+      "otherEntityRelationshipName": "book",
+      "relationshipName": "bookRentingRequest",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

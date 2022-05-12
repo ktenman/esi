@@ -1,0 +1,14 @@
+<template>
+  <iframe
+    class='border-0'
+    data-cy='swagger-frame'
+    height='900'
+    seamless
+    src='swagger-ui/index.html'
+    target='_top'
+    title='Swagger UI'
+    width='100%'
+  ></iframe>
+</template>
+
+<script lang='ts' src='./docs.component.ts'></script>

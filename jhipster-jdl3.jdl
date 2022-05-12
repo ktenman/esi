@@ -1,0 +1,50 @@
+enum BookStatus {
+    AVAILABLE, BOOKED, RENTED
+}
+
+enum RentingStatus {
+    OPEN, CANCELLED, RENTED, DECLINED
+}
+
+enum Language {
+    ESTONIAN, ENGLISH, FINNISH
+}
+
+enum Category {
+    CHILDREN, DRAMA, THRILLER
+}
+
+entity Book {
+	author String
+    title String
+    releaseDate LocalDate
+    status BookStatus
+    category Category
+    language Language
+}
+
+entity BookRentingRequest {
+    status RentingStatus
+    rentedAt Instant
+    rentedUntil Instant
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Book to BookRentingRequest{book}
+}
+
+// defining multiple oneToOne relationships
+
+// Set pagination options
+paginate Book, BookRentingRequest with infinite-scroll
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except BookRentingRequest
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
